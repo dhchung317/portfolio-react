@@ -30,7 +30,10 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
+  padding-top: 60px;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: var(--mainWhite);
 }
 ol, ul {
 	list-style: none;
@@ -52,12 +55,25 @@ a {
 }
 /* END RESET*/
 
+:root {
+  --primaryColor: #aca5b3;
+  --mainWhite: rgb(255, 253, 245);
+  --offWhite: #f5f4e6;
+  --mainBlack: #222;
+  --mainGrey: #ececec;
+  --darkGrey: #cfcfcf;
+  --mainTransition: all 0.3s linear;
+  --mainSpacing: 3px;
+  --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
+  --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
 .navbar {
   position: fixed;
-  display: inline-block;
+  /* display: inline-block; */
   top: 0;
   left: 0;
-  height: 100px;
+  height: 60px;
   width: 100%;
   background: var(--offWhite);
   z-index: 1;
@@ -74,14 +90,21 @@ a {
   vertical-align: middle;
 }
 .nav-logo img {
-  padding: 20px;
-  width: 80px;
-  height: 80px;
+  filter:grayscale(90%);
+  transition: var(--mainTransition);
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 60px;
+  height: 60px;
+}
+
+.nav-logo img:hover {
+  filter:grayscale(0%);
 }
 
 .nav-links {
   display: table;
-  height:100px;
+  height:60px;
   transition: var(--mainTransition);
   list-style-type: none;
 }
@@ -102,8 +125,76 @@ a {
 }
 
 .nav-links li {
-  height:100px;
+  height:60px;
   vertical-align: middle;
   display: table-cell;
   padding-right: 60px;;
+}
+
+.project-tile {
+  display: inline-block;
+}
+
+.project-tile img{
+  display: inline-block;
+  filter:grayscale(90%);
+  transition: var(--mainTransition);
+  height: 300px;
+}
+
+.project-tile img:hover {
+  filter:grayscale(0%)
+}
+
+.project-list {
+  height: calc(100vh - 100px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+}
+
+.project-list-content {
+  text-align: center;
+}
+
+.project-tile-content-container {
+  width: 450px;
+}
+
+.project-tile-title {
+  margin: 8px;
+  display: inline-block;
+  text-align: center;
+}
+
+.project-tile-title h2 {
+  font-size: x-large;
+  font-weight: 500;
+}
+
+.project-tile-content-container a {
+  font-size: large;
+  font-weight: 500;
+  display: inline-block;
+  margin: 8px;
+}
+
+.project-tile-github-link {
+
+}
+
+.project-tile-playstore-link {
+
+}
+
+footer {
+  position: fixed;
+  display: inline-block;
+  bottom: 0;
+  height: 40px;
+  width: 100%;
+  background: var(--offWhite);
+  z-index: 1;
 }
