@@ -1,10 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import ProjectContainer from "../components/ProjectContainer"
 
 export default function Projects() {
     return (
         <div>
-            
+            <ProjectContainer />
         </div>
     )
 }

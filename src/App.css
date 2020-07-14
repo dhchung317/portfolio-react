@@ -50,6 +50,7 @@ table {
 a {
 	text-decoration: none;
 }
+/* END RESET*/
 
 .navbar {
   position: fixed;
@@ -86,14 +87,15 @@ a {
 }
 .nav-links a {
   text-decoration: none;
-  padding: 1rem 0;
+  /* padding: 1rem 0; */
   color: var(--mainBlack);
   transition: var(--mainTransition);
   vertical-align: middle;
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 600;
-  letter-spacing: var(--mainSpacing);
+  /* letter-spacing: var(--mainSpacing); */
+  padding-left: 16px;
 }
 .nav-links a:hover {
   color: var(--primaryColor);
@@ -101,7 +103,7 @@ a {
 
 .nav-links li {
   height:100px;
-  padding: 8px;
   vertical-align: middle;
   display: table-cell;
+  padding-right: 60px;;
 }
