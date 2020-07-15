@@ -204,10 +204,30 @@ a {
 
 }
 
+.skill-tile {
+  display: inline-block;
+}
+
 .skill-tile img {
   height:100px;
   width:100px;
 }
+
+.skill-list {
+  height: calc(100vh - 100px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-list-content {
+  text-align: center;
+}
+
+.skill-tile-content-container {
+  width: 200px;
+}
+
 
 footer {
   position: fixed;
