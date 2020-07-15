@@ -1,10 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import SkillContainer from '../components/SkillContainer'
 
 export default function Skills() {
     return (
         <div>
-            
+            <SkillContainer />
         </div>
     )
 }

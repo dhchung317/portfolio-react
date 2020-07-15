@@ -7,21 +7,34 @@ class ContextProvider extends Component {
 
     state = {
         projects:[],
+        skills:[],
         loading: true
     }
 
     getProjectData = async () => {
         try {
-
             let response = await Client.getEntries({
                 content_type: "portfolio"
             })
-
-
-            let projects = this.formatData(response.items)
-            console.log(projects)
+            let projects = this.formatProjectData(response.items)
             this.setState({
-                projects,
+                projects: projects,
+                loading: false
+            })
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    getSkillData = async () => {
+        try {
+            let response = await Client.getEntries({
+                content_type: "portfolioSkillTile"
+            })
+            console.log(response.items)
+            let skills = this.formatSkillData(response.items)
+            this.setState({
+                skills: skills,
                 loading: false
             })
         } catch (error) {
@@ -31,9 +44,10 @@ class ContextProvider extends Component {
 
     componentDidMount() {
         this.getProjectData()
+        this.getSkillData()
     }
 
-    formatData(items) {
+    formatProjectData(items) {
         let tempItems = items.map(item => {
             let id = item.sys.id
             let image = item.fields.image.fields.file.url
@@ -44,14 +58,29 @@ class ContextProvider extends Component {
         return tempItems
     }
 
+    formatSkillData(items) {
+        let tempItems = items.map(item => {
+            let id = item.sys.id
+            let icon = item.fields.icon.fields.file.url
+            console.log(item.fields)
+            let skill = { ...item.fields, icon, id }
+            return skill
+        })
+        return tempItems
+    }
+
     getProjects() {
         return this.state.projects
+    }
+
+    getSkills() {
+        return this.state.skills
     }
 
 
     render() {
         return (
-            <Context.Provider value={{...this.state, getProjects: this.getProjects}}>
+            <Context.Provider value={{...this.state, getProjects: this.getProjects, getSkills: this.getSkills}}>
                 {this.props.children}
             </Context.Provider>
         )
