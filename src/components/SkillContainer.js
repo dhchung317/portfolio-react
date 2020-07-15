@@ -14,5 +14,4 @@ function SkillContainer({ context }) {
         </>
     )
 }
-
 export default withConsumer(SkillContainer)

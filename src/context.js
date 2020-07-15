@@ -29,7 +29,8 @@ class ContextProvider extends Component {
     getSkillData = async () => {
         try {
             let response = await Client.getEntries({
-                content_type: "portfolioSkillTile"
+                content_type: "portfolioSkillTile",
+                order: "-fields.proficiency"
             })
             console.log(response.items)
             let skills = this.formatSkillData(response.items)

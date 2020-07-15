@@ -1,31 +1,28 @@
 import React, { Component } from 'react'
 import logo from '../img/logo_small.png'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 export default function Navbar() {
-
         return (
             <nav className="navbar">
-
                 <div className="nav-logo">
-                    <Link to="/">
+                    <NavLink to="/home">
                         <img src={logo} alt="logo"/>
-                    </Link>
+                    </NavLink>
                 </div>
-
                 <div className="nav">
                 <ul className="nav-links">
                     <li>
-                        <Link to="/">Home</Link>
+                        <NavLink to="/home" activeClassName="active-link">Home</NavLink>
                     </li>
                     <li>
-                        <Link to="/projects">Projects</Link>
+                        <NavLink to="/projects" activeClassName="active-link">Projects</NavLink>
                     </li>
                     <li>
-                        <Link to="/skills">Skills</Link>
+                        <NavLink to="/skills" activeClassName="active-link">Skills</NavLink>
                     </li>
                     <li>
-                        <Link to="/contact">Contact</Link>
+                        <NavLink to="/contact" activeClassName="active-link">Contact</NavLink>
                     </li>
                 </ul>
                 </div>
