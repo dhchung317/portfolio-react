@@ -62,7 +62,7 @@ a {
   --mainBlack: #222;
   --mainGrey: #ececec;
   --darkGrey: #cfcfcf;
-  --mainTransition: all 0.3s linear;
+  --mainTransition: color 0.3s linear;
   --mainSpacing: 3px;
   --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
   --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
@@ -104,7 +104,7 @@ a {
 }
 .nav-logo img {
   filter:grayscale(90%);
-  transition: var(--mainTransition);
+  transition: all .3s linear;
   padding-left: 20px;
   padding-right: 20px;
   width: 60px;
@@ -122,6 +122,7 @@ a {
   list-style-type: none;
 }
 .nav-links a {
+  height: 60px;
   text-decoration: none;
   /* padding: 1rem 0; */
   color: var(--mainBlack);
@@ -131,18 +132,27 @@ a {
   font-size: 1.2rem;
   font-weight: 600;
   /* letter-spacing: var(--mainSpacing); */
-  padding-left: 16px;
+  margin-left: 16px;
 }
-.nav-links a:hover {
+.nav-links a:hover:not(.active-link) {
   color: var(--primaryColor);
 }
 
+.nav-links .active-link {
+  border-top: 5px solid rgb(66, 211, 255);
+  padding-top: 12px;
+}
+
+/* .active-logo {
+  filter: grayscale(0%);
+} */
 /* .nav-links a.active {
 
 } */
 
 .nav-links li {
   height:60px;
+  text-align: center;
   vertical-align: middle;
   display: table-cell;
   padding-right: 60px;;
@@ -156,7 +166,8 @@ a {
   display: inline-block;
   filter:grayscale(90%);
   transition: var(--mainTransition);
-  height: 300px;
+  margin:21px;
+  height: 225px;
 }
 
 .project-tile img:hover {
@@ -175,11 +186,13 @@ a {
 }
 
 .project-tile-content-container {
-  width: 450px;
+  width: 400px;
+  margin-left: 25px;
+  margin-right: 25px;
 }
 
 .project-tile-title {
-  margin: 8px;
+  margin: 12px;
   display: inline-block;
   text-align: center;
 }
@@ -193,7 +206,7 @@ a {
   font-size: large;
   font-weight: 500;
   display: inline-block;
-  margin: 8px;
+  margin: 12px;
 }
 
 .project-tile-github-link {
@@ -206,8 +219,12 @@ a {
 
 .skill-tile {
   margin: 18px 6px 18px 6px;
-
   display: inline-block;
+}
+
+.skill-tile-title {
+  font-size: large;
+  font-weight: 500;
 }
 
 .skill-tile img {
@@ -241,32 +258,32 @@ a {
 .r9{ width:90%; }
 .r10{ width:100%; }
 
+.c1{ background: rgb(83, 88, 88);  }
+.c2{ background:  rgb(74, 91, 94); }
+.c3{ background: rgb(82, 113, 117); }
+.c4{ background: rgb(69, 112, 119); }
+.c5{ background: rgb(91, 151, 160); }
+.c6{ background: rgb(75, 151, 163);  }
+.c7{ background: rgb(78, 167, 180);  }
+.c8{ background: rgb(98, 177, 189); }
+.c9{ background: rgb(83, 206, 224); }
+.c10{ background: rgb(1, 221, 255); }
+
 .rating-bar span{
   /* transition: all .3s linear; */
   display:block;
-  height:15px;
+  height:3px;
   /* background: lightyellow; */
 }
 
-.c1{ background: red; }
-.c2{ background: coral; }
-.c3{ background: lightcoral }
-.c4{ background: orange; }
-.c5{ background: yellow; }
-.c6{ background: yellowgreen; }
-.c7{ background: lightgreen; }
-.c8{ background: green; }
-.c9{ background: darkgreen; }
-.c10{ background: darkgreen; }
-
 .rating-bar{
-  background:black;
-  padding:3px;
+  background:rgba(116, 116, 116, 0.158);
+  padding:.3px;
   margin:8px;
 }
-.rating-bar, .rating-bar span {
-  border-radius:4px;
-}
+/* .rating-bar, .rating-bar span {
+  border-radius:2px;
+} */
 .animate-rating-bar{
   animation: progress 2s linear;
   -moz-animation: progress 2s linear;
@@ -303,7 +320,7 @@ footer {
 }
 @keyframes progress {
   from { 
-    background: darkred;
+    background: rgb(71, 71, 71);
     width:0% }
   to { width:100%; }
 }
