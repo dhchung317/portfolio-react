@@ -62,7 +62,8 @@ a {
   --mainBlack: #222;
   --mainGrey: #ececec;
   --darkGrey: #cfcfcf;
-  --mainTransition: color 0.3s linear;
+  --colorTransition: color 0.3s linear;
+  --allTransition: all 0.3s linear;
   --mainSpacing: 3px;
   --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
   --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
@@ -118,7 +119,7 @@ a {
 .nav-links {
   display: table;
   height:60px;
-  transition: var(--mainTransition);
+  /* transition: var(--colorTransition); */
   list-style-type: none;
 }
 .nav-links a {
@@ -126,7 +127,7 @@ a {
   text-decoration: none;
   /* padding: 1rem 0; */
   color: var(--mainBlack);
-  transition: var(--mainTransition);
+  transition: var(--colorTransition);
   vertical-align: middle;
   text-align: center;
   font-size: 1.2rem;
@@ -164,8 +165,8 @@ a {
 
 .project-tile img{
   display: inline-block;
-  filter:grayscale(90%);
-  transition: var(--mainTransition);
+  filter:grayscale(95%);
+  transition: var(--allTransition);
   margin:21px;
   height: 225px;
 }
@@ -228,6 +229,7 @@ a {
 }
 
 .skill-tile img {
+  filter: grayscale(75%);
   height:100px;
   width:100px;
 }
