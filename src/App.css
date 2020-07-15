@@ -205,6 +205,8 @@ a {
 }
 
 .skill-tile {
+  margin: 18px 6px 18px 6px;
+
   display: inline-block;
 }
 
@@ -225,9 +227,53 @@ a {
 }
 
 .skill-tile-content-container {
-  width: 200px;
+  width: 175px;
 }
 
+.r1{ width:10%; }
+.r2{ width:20%; }
+.r3{ width:30%; }
+.r4{ width:40%; }
+.r5{ width:50%; }
+.r6{ width:60%; }
+.r7{ width:70%; }
+.r8{ width:80%; }
+.r9{ width:90%; }
+.r10{ width:100%; }
+
+.rating-bar span{
+  /* transition: all .3s linear; */
+  display:block;
+  height:15px;
+  /* background: lightyellow; */
+}
+
+.c1{ background: red; }
+.c2{ background: coral; }
+.c3{ background: lightcoral }
+.c4{ background: orange; }
+.c5{ background: yellow; }
+.c6{ background: yellowgreen; }
+.c7{ background: lightgreen; }
+.c8{ background: green; }
+.c9{ background: darkgreen; }
+.c10{ background: darkgreen; }
+
+.rating-bar{
+  background:black;
+  padding:3px;
+  margin:8px;
+}
+.rating-bar, .rating-bar span {
+  border-radius:4px;
+}
+.animate-rating-bar{
+  animation: progress 2s linear;
+  -moz-animation: progress 2s linear;
+  -webkit-animation: progress 2s linear;
+  -ms-animation: progress 2s linear;
+  -o-animation: progress 2s linear;
+}
 
 footer {
   position: fixed;
@@ -237,4 +283,27 @@ footer {
   width: 100%;
   background: var(--offWhite);
   z-index: 1;
+}
+
+@-webkit-keyframes progress {
+  from { width:0% }
+  to { width:100%; }
+}
+@-moz-keyframes progress {
+  from { width:0% }
+  to { width:100%; }
+}
+@-ms-keyframes progress {
+  from { width:0% }
+  to { width:100%; }
+}
+@-o-keyframes progress {
+  from { width:0% }
+  to { width:100%; }
+}
+@keyframes progress {
+  from { 
+    background: darkred;
+    width:0% }
+  to { width:100%; }
 }

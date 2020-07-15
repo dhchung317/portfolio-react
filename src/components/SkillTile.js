@@ -8,7 +8,11 @@ export default function SkillTile({tile}) {
             <div className="skill-tile-content-container">
                 <div className="skill-tile-title">
                     <h2>{name}</h2>
-                    <h3>{proficiency}</h3>
+                    <div className="rating-bar">
+                        <div className={`r${proficiency}`} >
+                            <span className={`animate-rating-bar c${proficiency}`}></span>
+                        </div>
+                    </div>
                 </div>
                 <img src={icon} alt={name} />
             </div>
