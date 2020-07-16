@@ -31,9 +31,11 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
   line-height: 1;
-  padding-top: 60px;
+  margin-top: 60px;
+  margin-bottom: 40px;
   font-family: 'Courier New', Courier, monospace;
   background-color: var(--mainWhite);
+  overflow: auto;
 }
 ol, ul {
 	list-style: none;
@@ -57,8 +59,8 @@ a {
 
 :root {
   --primaryColor: #aca5b3;
-  --mainWhite: rgb(255, 253, 245);
-  --offWhite: #f5f4e6;
+  --mainWhite: rgb(255, 249, 224);
+  --offWhite: #f1eace;
   --mainBlack: #222;
   --mainGrey: #ececec;
   --darkGrey: #cfcfcf;
@@ -67,11 +69,20 @@ a {
   --mainSpacing: 3px;
   --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
   --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+  --navMenuWidth: 600px;
+  --bodyHeight: calc(100vh - 100px);
+}
+
+.loading {
+  height: var(--bodyHeight);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .navbar  {
   position: fixed;
-  /* display: inline-block; */
   top: 0;
   left: 0;
   height: 60px;
@@ -85,24 +96,17 @@ a {
   transition: background-size 0.25s ease-in;
 }
 
-/* .underline {
-  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
-  background-repeat: no-repeat;
-  background-size: 100% 0.2em;
-  background-position: 0 88%;
-  transition: background-size 0.25s ease-in;
-} */
-
 .nav-logo {
   display: inline-block;
   vertical-align: middle;
-  /* width: 300px;
-  height: 300px; */
 }
+
 .nav {
+  position: fixed;
   display: inline-block;
   vertical-align: middle;
 }
+
 .nav-logo img {
   filter:grayscale(90%);
   transition: all .3s linear;
@@ -116,12 +120,13 @@ a {
   filter:grayscale(0%);
 }
 
-.nav-links {
+.nav-links ul {
   display: table;
   height:60px;
-  /* transition: var(--colorTransition); */
+  width: var(--navMenuWidth);
   list-style-type: none;
 }
+
 .nav-links a {
   height: 60px;
   text-decoration: none;
@@ -135,6 +140,7 @@ a {
   /* letter-spacing: var(--mainSpacing); */
   margin-left: 16px;
 }
+
 .nav-links a:hover:not(.active-link) {
   color: var(--primaryColor);
 }
@@ -144,19 +150,12 @@ a {
   padding-top: 12px;
 }
 
-/* .active-logo {
-  filter: grayscale(0%);
-} */
-/* .nav-links a.active {
-
-} */
-
 .nav-links li {
   height:60px;
   text-align: center;
   vertical-align: middle;
   display: table-cell;
-  padding-right: 60px;;
+  padding-right: 60px;
 }
 
 .project-tile {
@@ -176,7 +175,7 @@ a {
 }
 
 .project-list {
-  height: calc(100vh - 100px);
+  height: var(--bodyHeight);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -192,15 +191,11 @@ a {
   margin-right: 25px;
 }
 
-.project-tile-title {
-  margin: 12px;
-  display: inline-block;
-  text-align: center;
-}
-
 .project-tile-title h2 {
   font-size: x-large;
   font-weight: 600;
+  margin: 12px;
+  text-align: center;
 }
 
 .project-tile-content-container a {
@@ -208,14 +203,6 @@ a {
   font-weight: 500;
   display: inline-block;
   margin: 12px;
-}
-
-.project-tile-github-link {
-
-}
-
-.project-tile-playstore-link {
-
 }
 
 .skill-tile {
@@ -235,7 +222,7 @@ a {
 }
 
 .skill-list {
-  height: calc(100vh - 100px);
+  height: var(--bodyHeight);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -272,10 +259,8 @@ a {
 .c10{ background: rgb(1, 221, 255); }
 
 .rating-bar span{
-  /* transition: all .3s linear; */
   display:block;
   height:3px;
-  /* background: lightyellow; */
 }
 
 .rating-bar{
@@ -283,9 +268,7 @@ a {
   padding:.3px;
   margin:8px;
 }
-/* .rating-bar, .rating-bar span {
-  border-radius:2px;
-} */
+
 .animate-rating-bar{
   animation: progress 2s linear;
   -moz-animation: progress 2s linear;
@@ -305,19 +288,27 @@ footer {
 }
 
 @-webkit-keyframes progress {
-  from { width:0% }
+  from { 
+    background: rgb(71, 71, 71);
+    width:0% }
   to { width:100%; }
 }
 @-moz-keyframes progress {
-  from { width:0% }
+  from { 
+    background: rgb(71, 71, 71);
+    width:0% }
   to { width:100%; }
 }
 @-ms-keyframes progress {
-  from { width:0% }
+  from { 
+    background: rgb(71, 71, 71);
+    width:0% }
   to { width:100%; }
 }
 @-o-keyframes progress {
-  from { width:0% }
+  from { 
+    background: rgb(71, 71, 71);
+    width:0% }
   to { width:100%; }
 }
 @keyframes progress {

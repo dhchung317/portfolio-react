@@ -6,14 +6,15 @@ export default function Navbar() {
         return (
             <nav className="navbar">
                 <div className="nav-logo">
-                    <NavLink to="/home">
+
                         <img src={logo} alt="logo"/>
-                    </NavLink>
+
                 </div>
                 <div className="nav">
                 <ul className="nav-links">
+                    <span className="underline"/>
                     <li>
-                        <NavLink to="/home" activeClassName="active-link">Home</NavLink>
+                        <NavLink exact to="/" activeClassName="active-link">Home</NavLink>
                     </li>
                     <li>
                         <NavLink to="/projects" activeClassName="active-link">Projects</NavLink>
