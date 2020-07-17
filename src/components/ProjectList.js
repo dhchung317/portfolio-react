@@ -3,6 +3,11 @@ import ProjectTile from './ProjectTile'
 import { play, exit } from '../timelines'
 import { TransitionGroup, Transition } from "react-transition-group"
 
+
+/**
+ * 
+ * TODO: add tranisition to exapnd poject tile image to display more info and brief description/ gif? etc.
+ */
 export default function ProjectList({ projects }) {
     return (
         <TransitionGroup>
