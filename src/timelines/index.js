@@ -2,6 +2,9 @@ import { gsap } from 'gsap';
 import { TimelineMax as Timeline, Power1 } from 'gsap';
 gsap.registerPlugin(Timeline, Power1);
 
+/** 
+* TODO: optional default transitions
+*/
 const getDefaultTimeline = (node, delay) => {
     const timeline = new Timeline({ paused: true });
     // const content = node.querySelectorAll('div');
@@ -40,14 +43,16 @@ const getSkillsTimeline = (node, delay) => {
 
     return timeline;
 }
-
+/** 
+* TODO: home content and transitions
+*/
 const getHomeTimeline = (node, delay) => {
     const timeline = new Timeline({ paused: true });
-    const texts = node.querySelectorAll('h1 > div');
+    // const texts = node.querySelectorAll('h1 > div');
 
     timeline
         .from(node, 0, { display: 'none', autoAlpha: 0, delay })
-        .staggerFrom(texts, 0.375, { autoAlpha: 0, x: -25, ease: Power1.easeOut }, 0.125);
+        // .staggerFrom(texts, 0.375, { autoAlpha: 0, x: -25, ease: Power1.easeOut }, 0.125);
 
     return timeline;
 }
