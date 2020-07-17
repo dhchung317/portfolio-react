@@ -1,16 +1,27 @@
 import React from 'react'
 import ProjectTile from './ProjectTile'
+import { play, exit } from '../timelines'
+import { TransitionGroup, Transition } from "react-transition-group"
 
 export default function ProjectList({ projects }) {
     return (
-        <section className="project-list">
-            <div className="project-list-content">
-                {
-                    projects.map((item) => {
-                        return <ProjectTile key={item.id} tile={item} />
-                    })
-                }
-            </div>
-        </section>
+        <TransitionGroup>
+            <Transition
+                appear={true}
+                onEnter={(node, appears) => play('/projects', node, appears)}
+                onExit={(node, appears) => exit(node, appears)}
+                timeout={{ enter: 750, exit: 0 }}
+            >
+                <section className="project-list">
+                    <div className="project-list-content">
+                        {
+                            projects.map((item) => {
+                                return <ProjectTile className="pTile" key={item.id} tile={item} />
+                            })
+                        }
+                    </div>
+                </section>
+            </Transition>
+        </TransitionGroup>
     )
 }

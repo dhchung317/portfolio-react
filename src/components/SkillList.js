@@ -1,16 +1,27 @@
 import React from 'react'
 import SkillTile from './SkillTile'
+import { play, exit } from '../timelines'
+import { TransitionGroup, Transition } from 'react-transition-group'
 
 export default function SkillList({ skills }) {
     return (
-        <section className="skill-list">
-            <div className="skill-list-content">
-                {
-                    skills.map((item) => {
-                        return <SkillTile key={item.id} tile={item} />
-                    })
-                }
-            </div>
-        </section>
+        <TransitionGroup>
+            <Transition
+                appear={true}
+                onEnter={(node, appears) => play('/skills', node, appears)}
+                onExit={(node, appears) => exit(node, appears)}
+                timeout={{ enter: 750, exit: 0 }}
+            >
+                <section className="skill-list">
+                    <div className="skill-list-content">
+                        {
+                            skills.map((item) => {
+                                return <SkillTile className="sTile" key={item.id} tile={item} />
+                            })
+                        }
+                    </div>
+                </section>
+            </Transition>
+        </TransitionGroup>
     )
 }

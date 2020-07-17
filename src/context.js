@@ -70,18 +70,9 @@ class ContextProvider extends Component {
         return tempItems
     }
 
-    getProjects() {
-        return this.state.projects
-    }
-
-    getSkills() {
-        return this.state.skills
-    }
-
-
     render() {
         return (
-            <Context.Provider value={{...this.state, getProjects: this.getProjects, getSkills: this.getSkills}}>
+            <Context.Provider value={{...this.state}}>
                 {this.props.children}
             </Context.Provider>
         )

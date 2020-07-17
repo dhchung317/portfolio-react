@@ -3,7 +3,7 @@ import ProjectContainer from "../components/ProjectContainer"
 
 export default function Projects() {
     return (
-        <div>
+        <div className="project-page">
             <ProjectContainer />
         </div>
     )
