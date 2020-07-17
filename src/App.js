@@ -7,6 +7,7 @@ import Home from "./pages/Home"
 import Projects from "./pages/Projects"
 import Skills from "./pages/Skills"
 import Contact from "./pages/Contact"
+import Error from "./pages/Error"
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
 
@@ -18,7 +19,7 @@ function App() {
     {/* <BrowserRouter> */}
       <Navbar />
       <Route render={(location) => {
-        // const { pathname, key } = location
+        const { pathname, key } = location
         return (
         //   <TransitionGroup component={null}>
         //     <Transition
