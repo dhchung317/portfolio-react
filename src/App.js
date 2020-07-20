@@ -10,16 +10,15 @@ import Contact from "./pages/Contact"
 import Error from "./pages/Error"
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
+import ContextProvider from "./context"
 
 function App() {
   return (
     <>
-      <Navbar />
-      <Route render={() => {
-        return (
-          <Transition
-            onExit={(node, appears) => exit(node, appears)}
-            timeout={150}>
+      <ContextProvider>
+        <Navbar />
+        <Route render={() => {
+          return (
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/projects" component={Projects} />
@@ -27,12 +26,10 @@ function App() {
               <Route exact path="/contact" component={Contact} />
               <Route component={Error} />
             </Switch>
-
-          </Transition>
-
-        )
-      }} />
-      <Footer />
+          )
+        }} />
+        <Footer />
+      </ContextProvider>
     </>
   );
 }

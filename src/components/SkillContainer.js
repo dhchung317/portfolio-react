@@ -1,17 +1,14 @@
-import React from 'react'
-import { withConsumer } from '../context'
+import React, { useContext } from 'react'
+import { Context } from '../context'
 import Loading from './Loading'
 import SkillList from './SkillList'
 
-function SkillContainer({ context }) {
-    const { loading, skills } = context
-    if (loading) {
-        return <Loading />
-    }
-    return (
-        <>
-          <SkillList skills={skills} />
-        </>
+export default function SkillContainer() {
+    const { loading, skills } = useContext(Context)
+    
+    return loading ? (
+        <Loading />
+    ) : (
+        <SkillList skills={skills} />
     )
 }
-export default withConsumer(SkillContainer)
