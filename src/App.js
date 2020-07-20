@@ -10,23 +10,26 @@ import Contact from "./pages/Contact"
 import Error from "./pages/Error"
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
+import ContextProvider from "./context"
 
 function App() {
   return (
     <>
-      <Navbar />
-      <Route render={() => {
-        return (
-              <Switch>
-                <Route exact path="/" component={Home} />
-                <Route exact path="/projects" component={Projects} />
-                <Route exact path="/skills" component={Skills} />
-                <Route exact path="/contact" component={Contact} />
-                <Route component={Error} />
-              </Switch>
-        )
-      }} />
-      <Footer />
+      <ContextProvider>
+        <Navbar />
+        <Route render={() => {
+          return (
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/projects" component={Projects} />
+              <Route exact path="/skills" component={Skills} />
+              <Route exact path="/contact" component={Contact} />
+              <Route component={Error} />
+            </Switch>
+          )
+        }} />
+        <Footer />
+      </ContextProvider>
     </>
   );
 }

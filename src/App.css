@@ -57,10 +57,14 @@ a {
 	/* text-decoration: none; */
 }
 a:active {
-  /* display: inline-block; */
-  color: azure;
-  padding-top: 2px;
+  display: table-cell;
+  /* position: absolute; */
+  color: var(--primaryColor);
   transform: translateY(2%);
+}
+a:visited {
+  color: var(--mainBlack);
+  text-decoration: none;
 }
 /* END RESET*/
 
@@ -78,7 +82,7 @@ a:active {
   --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
   --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
   --navMenuWidth: 600px;
-  --bodyHeight: calc(100vh - 100px);
+  --bodyHeight: calc(100vh - 90px);
 }
 
 .loading {
@@ -97,7 +101,7 @@ a:active {
   margin: 0;
   border: none;
   background-color: var(--uBlue);
-  transition: .3s ease-in;
+  transition: .3s ease-in-out;
   visibility: collapse;
 }
 
@@ -124,6 +128,43 @@ a:active {
   margin-left: 75%;
   visibility: visible;
 }
+/* 
+.one:active ~ .underline {
+  visibility: visible;
+  transform: translateY(50px);
+  transition:  .08s linear;
+  height:10px;
+  width: 25%;
+  margin-left: 0%;
+}
+
+.two:active ~ .underline {
+  visibility: visible;
+  transform: translateY(50px);
+  transition:  .08s linear;
+  height:10px;
+  width: 25%;
+  margin-left: 25%;
+}
+
+.three:active ~ .underline {
+  visibility: visible;
+  transform: translateY(50px);
+  transition:  .08s linear;
+  height:10px;
+  width: 25%;
+  margin-left: 50%;
+}
+
+.four:active ~ .underline {
+  visibility: visible;
+  transform: translateY(50px);
+  transition:  .08s linear;
+  height:10px;
+  width: 25%;
+  margin-left: 75%;
+}
+ */
 
 /* 
 a ~ .underline {
@@ -156,7 +197,7 @@ a ~ .underline {
   position: fixed;
   top: 0;
   left: 0;
-  height: 60px;
+  height: 50px;
   width: 100%;
   background: var(--offWhite);
   z-index: 1;
@@ -184,8 +225,8 @@ a ~ .underline {
   transition: all .3s linear;
   padding-left: 20px;
   padding-right: 20px;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
 }
 
 .nav-logo img:hover {
@@ -194,7 +235,7 @@ a ~ .underline {
 
 .nav-links ul {
   display: table;
-  height:60px;
+  height:50px;
   list-style-type: none;
   width: var(--navMenuWidth);
 }
@@ -213,15 +254,19 @@ a ~ .underline {
   color: var(--primaryColor);
 }
 
+/* a:active ~ .underline {
+  visibility: visible;
+  width: 25%;
+  height: 100%;
+} */
+
 a.active-link {
   color: var(--uBlue);
-
   text-shadow: var(--darkShadow);
 }
 
-
 .nav-links li {
-  height:60px;
+  height:50px;
   width:150px;
   text-align: center;
   vertical-align: middle;
@@ -236,8 +281,10 @@ a.active-link {
   display: inline-block;
   filter:grayscale(95%);
   transition: var(--allTransition);
-  margin:21px;
+  margin:20px;
   height: 225px;
+  width:320px;
+  border: solid 5px rgb(59, 59, 59);
 }
 
 .project-tile img:hover {
@@ -269,14 +316,20 @@ a.active-link {
 }
 
 .project-tile-content-container a {
+  color:var(--mainBlack);
   font-size: large;
   font-weight: 500;
   display: inline-block;
   margin: 12px;
+  text-decoration: none;
+}
+
+.project-tile-content-container a:hover {
+  color: var(--primaryColor);
 }
 
 .skill-tile {
-  margin: 18px 6px 18px 6px;
+  margin: 18px 12px 18px 12px;
   display: inline-block;
 }
 
@@ -286,9 +339,17 @@ a.active-link {
 }
 
 .skill-tile img {
-  filter: grayscale(75%);
+  filter: grayscale(85%);
+  filter: contrast(70%);
   height:100px;
   width:100px;
+  margin-bottom: 24px;
+  transition: var(--allTransition);
+}
+
+.skill-tile img:hover {
+  filter: grayscale(0%);
+  filter: contrast(100%);
 }
 
 .skill-list {
@@ -336,7 +397,7 @@ a.active-link {
 .rating-bar{
   background:rgba(116, 116, 116, 0.158);
   padding:.3px;
-  margin:8px;
+  margin:18px;
 }
 
 .animate-rating-bar{
@@ -408,4 +469,22 @@ footer {
   .nav a {
     font-size: large;
   }
+}
+
+.example-enter {
+  opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.example-exit {
+  opacity: 1;
+}
+
+.example-exit.example-exit-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
 }

@@ -19,13 +19,10 @@ const getDefaultTimeline = (node, delay) => {
 
 const getProjectTimeline = (node, delay) => {
     const timeline = new Timeline({ paused: true });
-    const content = node.querySelector('.project-list-container');
+    // const content = node.querySelectorAll('article');
 
     timeline
-        .from(node, 0.3, { display: 'none', autoAlpha: 0, delay, ease: Power1.easeIn })
-        .from(content, 0.15, { autoAlpha: 0, y: 25, ease: Power1.easeInOut })
-        // .from(contentInner, 0.15, { autoAlpha: 0, delay: 0.15, ease: Power1.easeIn });
-
+        .from(node, 0.3, { display: 'none', autoAlpha: 0, y: 20, delay, ease: Power1.easeIn })
     return timeline;
 }
 
@@ -58,6 +55,7 @@ const getHomeTimeline = (node, delay) => {
 }
 
 export const play = (pathname, node, appears) => {
+    console.log("play")
     const delay = appears ? 0 : 0.5;
     let timeline
 
@@ -76,7 +74,8 @@ export const play = (pathname, node, appears) => {
 }
 
 export const exit = (node) => {
+    console.log("exit")
     const timeline = new Timeline({ paused: true });
-    timeline.to(node, 0.375, { autoAlpha: 0, ease: Power1.easeOut });
-    timeline.play();
+    timeline.to(node, 0.175, { autoAlpha: 0, y: 25, ease: Power1.easeOut });
+    timeline.play()
 }
