@@ -9,8 +9,7 @@ export default function SkillList({ skills }) {
             <Transition
                 appear={true}
                 onEnter={(node, appears) => play('/skills', node, appears)}
-                onExit={(node, appears) => exit(node, appears)}
-                timeout={{ enter: 750, exit: 0 }}
+                timeout={{ enter: 750, exit: 250 }}
             >
                 <section className="skill-list">
                     <div className="skill-list-content">

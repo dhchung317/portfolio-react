@@ -17,13 +17,19 @@ function App() {
       <Navbar />
       <Route render={() => {
         return (
-              <Switch>
-                <Route exact path="/" component={Home} />
-                <Route exact path="/projects" component={Projects} />
-                <Route exact path="/skills" component={Skills} />
-                <Route exact path="/contact" component={Contact} />
-                <Route component={Error} />
-              </Switch>
+          <Transition
+            onExit={(node, appears) => exit(node, appears)}
+            timeout={150}>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/projects" component={Projects} />
+              <Route exact path="/skills" component={Skills} />
+              <Route exact path="/contact" component={Contact} />
+              <Route component={Error} />
+            </Switch>
+
+          </Transition>
+
         )
       }} />
       <Footer />
