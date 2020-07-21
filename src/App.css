@@ -84,6 +84,14 @@ a:visited {
   --navMenuWidth: 600px;
   --bodyHeight: calc(100vh - 90px);
 }
+/* #root {
+  height: 100vh;
+  width:100vw;
+}
+
+.homeDiv {
+
+} */
 
 .loading {
   height: var(--bodyHeight);
@@ -128,8 +136,8 @@ a:visited {
   margin-left: 75%;
   visibility: visible;
 }
-/* 
-.one:active ~ .underline {
+
+/* .one:active ~ .underline {
   visibility: visible;
   transform: translateY(50px);
   transition:  .08s linear;
@@ -163,8 +171,8 @@ a:visited {
   height:10px;
   width: 25%;
   margin-left: 75%;
-}
- */
+} */
+
 
 /* 
 a ~ .underline {
@@ -271,6 +279,52 @@ a.active-link {
   text-align: center;
   vertical-align: middle;
   display: table-cell;
+}
+
+.logo-container {
+  display: flex;
+  position: relative;
+  height: var(--bodyHeight);
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .logo-div {
+  position: relative;
+} */
+
+.logo-div img {
+  filter: grayscale(40%);
+  width: 400px;
+  /* height: 400px; */
+  transition: var(--allTransition);
+  /* margin-bottom: 100px; */
+  position: absolute;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  margin: auto;
+  z-index: 1;
+}
+
+.logo-div img:hover {
+  filter: grayscale(0%);
+
+}
+
+.logo-u-div img {
+  width: 400px;
+  filter: brightness(20%);
+  opacity: 1;
+  transition: var(--allTransition);
+  position: absolute;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  margin: auto;
 }
 
 .project-tile {
