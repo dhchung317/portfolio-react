@@ -16,13 +16,12 @@ const getDefaultTimeline = (node, delay) => {
     return timeline;
 }
 
-
 const getProjectTimeline = (node, delay) => {
     const timeline = new Timeline({ paused: true });
-    // const content = node.querySelectorAll('article');
+    const content = node.querySelectorAll('div');
 
     timeline
-        .from(node, 0.3, { display: 'none', autoAlpha: 0, y: 20, delay, ease: Power1.easeIn })
+        .from(node, 0.375, { display: 'none', autoAlpha: 0, y: 60, ease: Power1.easeIn }, delay)
     return timeline;
 }
 
@@ -45,11 +44,14 @@ const getSkillsTimeline = (node, delay) => {
 */
 const getHomeTimeline = (node, delay) => {
     const timeline = new Timeline({ paused: true });
-    // const texts = node.querySelectorAll('h1 > div');
+    const logo = node.querySelectorAll('.logo-div > img');
+    const logoU = node.querySelector('.logo-u-div > img');
 
     timeline
-        .from(node, 0, { display: 'none', autoAlpha: 0, delay })
-        // .staggerFrom(texts, 0.375, { autoAlpha: 0, x: -25, ease: Power1.easeOut }, 0.125);
+        // .from(node, 0, { display: 'none', autoAlpha: 0, delay })
+        .from(logoU, 0.175, { display: 'none', y: 80, autoAlpha: 0, ease: Power1.easeIn })
+        .from(logo, 0.275, { display: 'none', y: 100, autoAlpha: 0, ease: Power1.easeIn }, delay)
+    // .staggerFrom(texts, 0.375, { autoAlpha: 0, x: -25, ease: Power1.easeOut }, 0.125);
 
     return timeline;
 }
@@ -75,7 +77,7 @@ export const play = (pathname, node, appears) => {
 
 export const exit = (node) => {
     console.log("exit")
-    const timeline = new Timeline({ paused: true });
-    timeline.to(node, 0.175, { autoAlpha: 0, y: 25, ease: Power1.easeOut });
+    let timeline = new Timeline({ paused: true });
+    timeline.to(node, 0.5, { autoAlpha: 0, y: 25, ease: Power1.easeOut }, .3);
     timeline.play()
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import ProjectTile from './ProjectTile'
 import { play, exit } from '../timelines'
+import { TweenMax } from 'gsap'
 import { TransitionGroup, Transition } from "react-transition-group"
 /**
  * 
@@ -8,30 +9,29 @@ import { TransitionGroup, Transition } from "react-transition-group"
  */
 export default function ProjectList({ projects }) {
     return (
+        <TransitionGroup childFactory={child => React.cloneElement(child)}>
+            <Transition
+                appear={true}
+                onEnter={(node, appears) => play('/projects', node, appears)}
+                onExit={(node, appears) => exit(node, appears)}
+                timeout={750}
+            >
+                <section className="project-list">
+                    <div className="project-list-content">
+                        {
+                            projects.map((item) => {
+                                return (
 
-        <section className="project-list">
-            <div className="project-list-content">
-                <TransitionGroup>
-                    {
-                        projects.map((item, index) => {
-                            return (
-                                <Transition
-                                    key={index}
-                                    appear={true}
-                                    onEnter={(node, appears) => play('/projects', node, appears)}
-                                    // onExit={(node, appears) => exit(node, appears)}
-                                    timeout={ 750 }
-                                    in={true}
-                                >
                                     <ProjectTile className="pTile" key={item.id} tile={item} />
-                                </Transition>
-                            )
 
-                        })
-                    }
-                </TransitionGroup>
-            </div>
-        </section>
+                                )
+
+                            })
+                        }
+                    </div>
+                </section>
+            </Transition>
+        </TransitionGroup>
 
     )
 }
