@@ -1,9 +1,7 @@
-  
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -84,14 +82,6 @@ a:visited {
   --navMenuWidth: 600px;
   --bodyHeight: calc(100vh - 90px);
 }
-/* #root {
-  height: 100vh;
-  width:100vw;
-}
-
-.homeDiv {
-
-} */
 
 .loading {
   height: var(--bodyHeight);
@@ -137,70 +127,6 @@ a:visited {
   visibility: visible;
 }
 
-/* .one:active ~ .underline {
-  visibility: visible;
-  transform: translateY(50px);
-  transition:  .08s linear;
-  height:10px;
-  width: 25%;
-  margin-left: 0%;
-}
-
-.two:active ~ .underline {
-  visibility: visible;
-  transform: translateY(50px);
-  transition:  .08s linear;
-  height:10px;
-  width: 25%;
-  margin-left: 25%;
-}
-
-.three:active ~ .underline {
-  visibility: visible;
-  transform: translateY(50px);
-  transition:  .08s linear;
-  height:10px;
-  width: 25%;
-  margin-left: 50%;
-}
-
-.four:active ~ .underline {
-  visibility: visible;
-  transform: translateY(50px);
-  transition:  .08s linear;
-  height:10px;
-  width: 25%;
-  margin-left: 75%;
-} */
-
-
-/* 
-a ~ .underline {
-  width: 25%;
-  margin-left: 0%;
-  visibility: visible;
-}
-
-
-.two:focus-within ~ .underline {
-  width: 25%;
-  margin-left: 25%;
-  visibility: visible;
-}
-
-.three:focus-within ~ .underline {
-  width: 25%;
-  margin-left: 50%;
-  visibility: visible;
-}
-
-.four:focus-within ~ .underline {
-  width: 25%;
-  margin-left: 75%;
-  visibility: visible;
-} */
-
-
 .navbar  {
   position: fixed;
   top: 0;
@@ -219,6 +145,10 @@ a ~ .underline {
 .nav-logo {
   display: inline-block;
   vertical-align: middle;
+}
+
+.nav-logo:active {
+  transform: translateY(0) !important;
 }
 
 .nav {
@@ -295,7 +225,7 @@ a.active-link {
 } */
 
 .logo-div img {
-  filter: grayscale(40%);
+  filter: grayscale(90%) opacity(.4);
   width: 400px;
   /* height: 400px; */
   transition: var(--allTransition);
@@ -311,13 +241,12 @@ a.active-link {
 
 .logo-div img:hover {
   filter: grayscale(0%);
-
 }
 
 .logo-u-div img {
   width: 400px;
-  filter: brightness(20%);
-  opacity: 1;
+  filter: brightness(120%);
+  opacity: .3;
   transition: var(--allTransition);
   position: absolute;
   left:0;
@@ -327,6 +256,22 @@ a.active-link {
   margin: auto;
 }
 
+.about-me-text-div {
+  position: absolute;
+  text-align: center;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  margin: auto;
+  width:58vw;
+  height: fit-content;
+  z-index: 2;
+}
+.about-me-text-div p {
+  font-size: larger;
+  font-weight: 600;
+}
 .project-tile {
   display: inline-block;
 }
@@ -523,22 +468,4 @@ footer {
   .nav a {
     font-size: large;
   }
-}
-
-.example-enter {
-  opacity: 0.01;
-}
-
-.example-enter.example-enter-active {
-  opacity: 1;
-  transition: opacity 500ms ease-in;
-}
-
-.example-exit {
-  opacity: 1;
-}
-
-.example-exit.example-exit-active {
-  opacity: 0.01;
-  transition: opacity 300ms ease-in;
 }

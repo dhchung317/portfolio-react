@@ -1,10 +1,8 @@
 import React from 'react'
 import ProjectTile from './ProjectTile'
 import { play, exit } from '../timelines'
-import { TweenMax } from 'gsap'
 import { TransitionGroup, Transition } from "react-transition-group"
 /**
- * 
  * TODO: add tranisition to exapnd poject tile image to display more info and brief description/ gif? etc.
  */
 export default function ProjectList({ projects }) {
@@ -21,11 +19,8 @@ export default function ProjectList({ projects }) {
                         {
                             projects.map((item) => {
                                 return (
-
                                     <ProjectTile className="pTile" key={item.id} tile={item} />
-
                                 )
-
                             })
                         }
                     </div>

@@ -1,6 +1,6 @@
 import { gsap } from 'gsap';
-import { TimelineMax as Timeline, Power1 } from 'gsap';
-gsap.registerPlugin(Timeline, Power1);
+import { TimelineMax as Timeline, Power1, Back, Elastic } from 'gsap';
+gsap.registerPlugin(Timeline, Power1, Back, Elastic);
 
 /** 
 * TODO: optional default transitions
@@ -19,9 +19,8 @@ const getDefaultTimeline = (node, delay) => {
 const getProjectTimeline = (node, delay) => {
     const timeline = new Timeline({ paused: true });
     const content = node.querySelectorAll('div');
-
     timeline
-        .from(node, 0.375, { display: 'none', autoAlpha: 0, y: 60, ease: Power1.easeIn }, delay)
+        .from(node, 1.5, { display: 'none', autoAlpha: 0, y: 200, ease: Elastic.easeOut.config(.8) }, delay + .15)
     return timeline;
 }
 
@@ -30,12 +29,11 @@ const getSkillsTimeline = (node, delay) => {
     const content = node.querySelectorAll('div > article');
     const texts = node.querySelector('sTile');
     // const contentInner = node.querySelector('.skill-list-content');
-
     timeline
         .from(node, 0, { display: 'none', autoAlpha: 0, delay })
         // .from(content, 0.15, { autoAlpha: 0, y: 25, ease: Power1.easeInOut })
         // .from(content, 0.15, { autoAlpha: 0, delay: 0.15, ease: Power1.easeIn });
-        .staggerFrom(content, 0.175, { autoAlpha: 0, x: -25, ease: Power1.easeOut }, 0.075);
+        .staggerFrom(content, 1, { autoAlpha: 0, x: -25, ease: Elastic.easeOut }, 0.075);
 
     return timeline;
 }
@@ -44,32 +42,36 @@ const getSkillsTimeline = (node, delay) => {
 */
 const getHomeTimeline = (node, delay) => {
     const timeline = new Timeline({ paused: true });
-    const logo = node.querySelectorAll('.logo-div > img');
+    const logo = node.querySelector('.logo-div > img');
     const logoU = node.querySelector('.logo-u-div > img');
-
     timeline
-        // .from(node, 0, { display: 'none', autoAlpha: 0, delay })
-        .from(logoU, 0.175, { display: 'none', y: 80, autoAlpha: 0, ease: Power1.easeIn })
-        .from(logo, 0.275, { display: 'none', y: 100, autoAlpha: 0, ease: Power1.easeIn }, delay)
-    // .staggerFrom(texts, 0.375, { autoAlpha: 0, x: -25, ease: Power1.easeOut }, 0.125);
-
+        .from(logoU, .2, { display: 'none', autoAlpha: 0, y: 200, ease: Elastic.easeIn.config(.5) })
+        .from(logo, 2.5, { display: 'none', autoAlpha: 0, y: 500, ease: Elastic.easeOut.config(1.2) }, delay + .2)
     return timeline;
+}
+
+const getTextTimeline = (node, delay) => {
+    const timeline = new Timeline({ paused: true });
+    const text = node.querySelector('p')
+    timeline
+        .from(text, 1, { display: 'none', autoAlpha: 0, ease: Power1.easeIn }, delay + 1)
+    return timeline
 }
 
 export const play = (pathname, node, appears) => {
     console.log("play")
     const delay = appears ? 0 : 0.5;
     let timeline
-
     if (pathname === '/')
         timeline = getHomeTimeline(node, delay);
     else if (pathname === '/projects')
         timeline = getProjectTimeline(node, delay);
     else if (pathname === '/skills')
         timeline = getSkillsTimeline(node, delay);
+    else if (pathname === 'about-me-text')
+        timeline = getTextTimeline(node, delay);
     else
         timeline = getDefaultTimeline(node, delay);
-
     window
         .loadPromise
         .then(() => requestAnimationFrame(() => timeline.play()))
