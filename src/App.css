@@ -407,6 +407,33 @@ a.active-link {
   -o-animation: progress 2s linear;
 }
 
+.contact-item-div {
+  display: inline-block;
+  margin: 60px;
+}
+
+.contact-item-div img {
+  width: 150px;
+  margin: 10px;
+  transition: var(--allTransition);
+}
+
+.contact-item-div img:hover {
+  filter: brightness(250%) opacity(.3);
+
+}
+
+.contact-list {
+  height: var(--bodyHeight);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-list-content {
+  text-align: center;
+}
+
 footer {
   position: fixed;
   display: inline-block;

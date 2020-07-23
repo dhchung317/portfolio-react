@@ -42,6 +42,7 @@ const ContextProvider = (props) => {
         try {
             let response = await Client.getEntries({
                 content_type: "portfolioContactItem",
+                order: "fields.name"
             })
             let cItems = formatContactData(response.items)
             setContactItems(cItems)
@@ -88,7 +89,7 @@ const ContextProvider = (props) => {
     }, []);
 
     return (
-        <Context.Provider value={{ projects, skills, loading }}>
+        <Context.Provider value={{ projects, skills, cItems, loading }}>
             {props.children}
         </Context.Provider>
     )
