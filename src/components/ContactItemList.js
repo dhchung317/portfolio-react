@@ -16,7 +16,7 @@ export default function ContactItemList({ items }) {
                     <div className="contact-list-content">
                         {
                             items.map((cItem) => {
-                                return <ContactItem className="cItem" key={item.id} item={cItem} />
+                                return <ContactItem className="cItem" key={cItem.id} item={cItem} />
                             })
                         }
                     </div>

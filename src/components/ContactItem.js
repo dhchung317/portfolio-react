@@ -4,12 +4,19 @@ import { Link } from 'react-router-dom'
 
 export default function ContactItem({ item }) {
     const { name, link, icon } = item
-    return (
-        <div>
+    return name === "E-Mail" ? (
+        <div className="contact-item-div">
             <h4>{name}</h4>
-            <Link to={link}>
+            <a href={`mailto:${link}`}>
                 <img src={icon} alt={name} />
-            </Link>
+            </a>
+        </div>
+    ) : (
+        <div className="contact-item-div">
+            <h4>{name}</h4>
+            <a href={link}>
+                <img src={icon} alt={name} />
+            </a>
         </div>
     )
 }

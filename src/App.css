@@ -240,7 +240,7 @@ a.active-link {
 }
 
 .logo-div img:hover {
-  filter: grayscale(0%);
+  filter: grayscale(0%) opacity(.7);
 }
 
 .logo-u-div img {
@@ -269,9 +269,11 @@ a.active-link {
   z-index: 2;
 }
 .about-me-text-div p {
+  filter: drop-shadow(8px 8px 12px var(--mainWhite));
   font-size: larger;
   font-weight: 600;
 }
+
 .project-tile {
   display: inline-block;
 }
@@ -287,7 +289,7 @@ a.active-link {
 }
 
 .project-tile img:hover {
-  filter:grayscale(0%)
+  filter:grayscale(0%);
 }
 
 .project-list {
@@ -405,6 +407,37 @@ a.active-link {
   -webkit-animation: progress 2s linear;
   -ms-animation: progress 2s linear;
   -o-animation: progress 2s linear;
+}
+
+.contact-item-div {
+  display: inline-block;
+  margin: 60px;
+}
+
+.contact-item-div h4 {
+  font-size: large;
+}
+
+.contact-item-div img {
+  width: 150px;
+  margin: 10px;
+  transition: var(--allTransition);
+}
+
+.contact-item-div img:hover {
+  filter: brightness(250%) opacity(.3);
+
+}
+
+.contact-list {
+  height: var(--bodyHeight);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-list-content {
+  text-align: center;
 }
 
 footer {

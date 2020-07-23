@@ -27,7 +27,7 @@ const getProjectTimeline = (node, delay) => {
 const getSkillsTimeline = (node, delay) => {
     const timeline = new Timeline({ paused: true });
     const content = node.querySelectorAll('div > article');
-    const texts = node.querySelector('sTile');
+    // const texts = node.querySelector('sTile');
     // const contentInner = node.querySelector('.skill-list-content');
     timeline
         .from(node, 0, { display: 'none', autoAlpha: 0, delay })
@@ -58,10 +58,19 @@ const getTextTimeline = (node, delay) => {
     return timeline
 }
 
+const getContactTimeline = (node, delay) => {
+    const timeline = new Timeline({ paused: true });
+    // const content = node.querySelectorAll('div');
+    timeline
+        .from(node, 1.5, { display: 'none', autoAlpha: 0, y: 200, ease: Elastic.easeOut.config(.8) }, delay + .15)
+    return timeline;
+}
+
 export const play = (pathname, node, appears) => {
     console.log("play")
     const delay = appears ? 0 : 0.5;
     let timeline
+    
     if (pathname === '/')
         timeline = getHomeTimeline(node, delay);
     else if (pathname === '/projects')
@@ -70,8 +79,11 @@ export const play = (pathname, node, appears) => {
         timeline = getSkillsTimeline(node, delay);
     else if (pathname === 'about-me-text')
         timeline = getTextTimeline(node, delay);
+    else if (pathname === '/contact')
+        timeline = getContactTimeline(node,delay);
     else
         timeline = getDefaultTimeline(node, delay);
+
     window
         .loadPromise
         .then(() => requestAnimationFrame(() => timeline.play()))
