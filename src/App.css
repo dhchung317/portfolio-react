@@ -240,7 +240,7 @@ a.active-link {
 }
 
 .logo-div img:hover {
-  filter: grayscale(0%);
+  filter: grayscale(0%) opacity(.7);
 }
 
 .logo-u-div img {
@@ -269,9 +269,11 @@ a.active-link {
   z-index: 2;
 }
 .about-me-text-div p {
+  filter: drop-shadow(8px 8px 12px var(--mainWhite));
   font-size: larger;
   font-weight: 600;
 }
+
 .project-tile {
   display: inline-block;
 }
@@ -287,7 +289,7 @@ a.active-link {
 }
 
 .project-tile img:hover {
-  filter:grayscale(0%)
+  filter:grayscale(0%);
 }
 
 .project-list {
@@ -410,6 +412,10 @@ a.active-link {
 .contact-item-div {
   display: inline-block;
   margin: 60px;
+}
+
+.contact-item-div h4 {
+  font-size: large;
 }
 
 .contact-item-div img {
