@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
 
 export default function ContactItem({ item }) {
     const { name, link, icon } = item
