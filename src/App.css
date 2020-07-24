@@ -421,12 +421,12 @@ a.active-link {
 .contact-item-div img {
   width: 150px;
   margin: 10px;
+  filter: brightness(100%) opacity(.8);
   transition: var(--allTransition);
 }
 
 .contact-item-div img:hover {
   filter: brightness(250%) opacity(.3);
-
 }
 
 .contact-list {
