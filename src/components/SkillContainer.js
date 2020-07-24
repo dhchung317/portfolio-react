@@ -5,7 +5,7 @@ import SkillList from './SkillList'
 
 export default function SkillContainer() {
     const { loading, skills } = useContext(Context)
-    
+
     return loading ? (
         <Loading />
     ) : (
