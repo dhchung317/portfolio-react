@@ -282,7 +282,7 @@ a.active-link {
   display: inline-block;
   filter:grayscale(95%);
   transition: var(--allTransition);
-  margin:20px;
+  margin:12px 20px 10px 20px;
   height: 225px;
   width:320px;
   border: solid 5px rgb(59, 59, 59);
@@ -321,7 +321,8 @@ a.active-link {
   font-size: large;
   font-weight: 500;
   display: inline-block;
-  margin: 12px;
+  margin-left:6px;
+  margin-right: 6px;
   text-decoration: none;
 }
 
