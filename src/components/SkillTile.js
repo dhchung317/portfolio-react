@@ -4,8 +4,8 @@ import PropTypes from 'prop-types'
 /**
  * TODO: transition window with links to github repos displaying best examples to support given skill
  */
-export default function SkillTile({tile}) {
-    const {icon, name, proficiency} = tile;
+export default function SkillTile({ tile }) {
+    const { icon, name, proficiency } = tile;
     return (
         <article className="skill-tile">
             <div className="skill-tile-content-container">

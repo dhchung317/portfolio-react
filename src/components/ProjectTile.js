@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export default function ProjectTile({tile}) {
-    const {image, title, githubLink, playstoreLink} = tile;
+export default function ProjectTile({ tile }) {
+    const { image, title, githubLink, playstoreLink } = tile;
     return (
         <article className="project-tile">
             <div className="project-tile-content-container">
