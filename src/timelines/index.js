@@ -60,17 +60,16 @@ const getTextTimeline = (node, delay) => {
 
 const getContactTimeline = (node, delay) => {
     const timeline = new Timeline({ paused: true });
-    // const content = node.querySelectorAll('div');
+    const content = node.querySelectorAll('div');
     timeline
-        .from(node, 1.5, { display: 'none', autoAlpha: 0, y: 200, ease: Elastic.easeOut.config(.8) }, delay + .15)
+        .from(content, 1.5, { display: 'none', autoAlpha: 0, y: 200, ease: Elastic.easeOut.config(.8) }, delay + .15)
     return timeline;
 }
 
 export const play = (pathname, node, appears) => {
-    console.log("play")
     const delay = appears ? 0 : 0.5;
     let timeline
-    
+
     if (pathname === '/')
         timeline = getHomeTimeline(node, delay);
     else if (pathname === '/projects')
@@ -80,7 +79,7 @@ export const play = (pathname, node, appears) => {
     else if (pathname === 'about-me-text')
         timeline = getTextTimeline(node, delay);
     else if (pathname === '/contact')
-        timeline = getContactTimeline(node,delay);
+        timeline = getContactTimeline(node, delay);
     else
         timeline = getDefaultTimeline(node, delay);
 

@@ -10,7 +10,7 @@ export default function ContactItemList({ items }) {
                 appear={true}
                 onEnter={(node, appears) => play('/contact', node, appears)}
                 onExit={(node, appears) => exit(node, appears)}
-                timeout={{ enter: 750, exit: 250 }}
+                timeout={250}
             >
                 <section className="contact-list">
                     <div className="contact-list-content">
