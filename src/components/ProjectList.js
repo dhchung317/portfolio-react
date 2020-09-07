@@ -7,7 +7,7 @@ import { TransitionGroup, Transition } from "react-transition-group"
  */
 export default function ProjectList({ projects }) {
     return (
-        <TransitionGroup childFactory={child => React.cloneElement(child)}>
+        <TransitionGroup >
             <Transition
                 appear={true}
                 onEnter={(node, appears) => play('/projects', node, appears)}
