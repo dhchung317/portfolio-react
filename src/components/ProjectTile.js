@@ -9,7 +9,9 @@ export default function ProjectTile({ tile }) {
                 <div className="project-tile-title">
                     <h2>{title}</h2>
                 </div>
+                <div className="project-tile-img-container">
                 <img src={image} alt={title} />
+                </div>
                 <a href={githubLink} className="project-tile-github-link">
                     Github
                 </a>

@@ -772,6 +772,11 @@ footer {
   .project-tile {
     width: 100vw;
     margin: 12px 0px 12px 0px;
-    
+  }
+
+  .project-tile img {
+    height: 200px;
+    width: 300px;
+    margin: 0;
   }
 }
