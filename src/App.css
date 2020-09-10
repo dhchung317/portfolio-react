@@ -169,6 +169,24 @@ a:visited {
   filter: grayscale(0%);
 }
 
+.nav-btn {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  float: right;
+  height:50px;
+  width: 50px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.nav-btn img {
+  width: 30px;
+  height: 30px;
+}
+
 .nav-links ul {
   display: table;
   height: 50px;
