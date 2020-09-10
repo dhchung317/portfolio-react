@@ -1,7 +1,8 @@
 import React, { useState, useContext, useEffect } from 'react'
 import logo from '../img/logo_small.png'
+import Hamburger from './Hamburger'
 import { NavLink } from 'react-router-dom'
-import { Context } from '../context'
+// import { Context } from '../context'
 
 export default function Navbar() {
 
@@ -18,19 +19,19 @@ export default function Navbar() {
 
     useEffect(() => {
         function handleResize() {
-          setWindowDimensions(getWindowDimensions());
+            setWindowDimensions(getWindowDimensions());
         }
-    
+
         window.addEventListener('resize', handleResize);
 
-        if(windowDimensions.width > 700) {
+        if (windowDimensions.width > 700) {
             setOpen(false)
         }
 
         return () => window.removeEventListener('resize', handleResize);
-      }, []);
+    }, []);
 
-    function toggleOpen(){
+    function toggleOpen() {
         setOpen(!open)
     }
 
@@ -42,12 +43,12 @@ export default function Navbar() {
                 </NavLink>
             </div>
 
-            <div className="nav">
+            <div className={open ? "nav nav-open" : "nav nav-close"}>
                 <ul className={open && windowDimensions.width < 700 ? "show-nav hamburger" : "nav-links"}>
-                    <li className="one"><NavLink exact to="/" activeClassName="active-link" onClick = {() => toggleOpen()}><span>Home</span></NavLink></li>
-                    <li className="two"><NavLink to="/projects" activeClassName="active-link" onClick = {() => toggleOpen()}><span>Projects</span></NavLink></li>
-                    <li className="three"> <NavLink to="/skills" activeClassName="active-link" onClick = {() => toggleOpen()}><span>Skills</span></NavLink></li>
-                    <li className="four"><NavLink to="/contact" activeClassName="active-link" onClick = {() => toggleOpen()}><span>Contact</span></NavLink></li>
+                    <li className="one"><NavLink exact to="/" activeClassName="active-link" onClick={() => toggleOpen()}><span>Home</span></NavLink></li>
+                    <li className="two"><NavLink to="/projects" activeClassName="active-link" onClick={() => toggleOpen()}><span>Projects</span></NavLink></li>
+                    <li className="three"> <NavLink to="/skills" activeClassName="active-link" onClick={() => toggleOpen()}><span>Skills</span></NavLink></li>
+                    <li className="four"><NavLink to="/contact" activeClassName="active-link" onClick={() => toggleOpen()}><span>Contact</span></NavLink></li>
                     <hr className="underline" />
                 </ul>
             </div>
@@ -56,9 +57,8 @@ export default function Navbar() {
                 className="nav-btn"
                 onClick={() => toggleOpen()}
             >
-                <img src={logo} />
+                <Hamburger className="hamburger" isOpen={open}/>
             </button>
-
         </nav>
     )
 
