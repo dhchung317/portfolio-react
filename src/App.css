@@ -709,15 +709,19 @@ footer {
     /* padding-top: 5px; */
     width: 100vw;
   }
-  .hamburger a:active {
-    display: table-row;
-  }
-  .hamburger a:visited {
+  /* .hamburger a:visited {
     display: table-row;
     color: var(--mainBlack);
     text-decoration: none;
   }
-  
+   */
+  .hamburger a:active {
+    display: table-row;
+  }
+  a.active-link {
+    color: var(--uBlue);
+    text-shadow: var(--darkShadow);
+  }
   .hamburger span {
     height: 40px;
     display: table-cell;
