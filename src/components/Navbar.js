@@ -31,7 +31,6 @@ export default function Navbar() {
       }, []);
 
     function toggleOpen(){
-        console.log(open)
         setOpen(!open)
     }
 
@@ -45,10 +44,10 @@ export default function Navbar() {
 
             <div className="nav">
                 <ul className={open && windowDimensions.width < 700 ? "show-nav hamburger" : "nav-links"}>
-                    <li className="one"><NavLink exact to="/" activeClassName="active-link"><span>Home</span></NavLink></li>
-                    <li className="two"><NavLink to="/projects" activeClassName="active-link"><span>Projects</span></NavLink></li>
-                    <li className="three"> <NavLink to="/skills" activeClassName="active-link"><span>Skills</span></NavLink></li>
-                    <li className="four"><NavLink to="/contact" activeClassName="active-link"><span>Contact</span></NavLink></li>
+                    <li className="one"><NavLink exact to="/" activeClassName="active-link" onClick = {() => toggleOpen()}><span>Home</span></NavLink></li>
+                    <li className="two"><NavLink to="/projects" activeClassName="active-link" onClick = {() => toggleOpen()}><span>Projects</span></NavLink></li>
+                    <li className="three"> <NavLink to="/skills" activeClassName="active-link" onClick = {() => toggleOpen()}><span>Skills</span></NavLink></li>
+                    <li className="four"><NavLink to="/contact" activeClassName="active-link" onClick = {() => toggleOpen()}><span>Contact</span></NavLink></li>
                     <hr className="underline" />
                 </ul>
             </div>
