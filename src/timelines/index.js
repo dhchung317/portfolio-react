@@ -62,7 +62,7 @@ const getContactTimeline = (node, delay) => {
     const timeline = new Timeline({ paused: true });
     const content = node.querySelectorAll('div');
     timeline
-        .from(content, 1.5, {}, delay + .15)
+        .from(content, 1.5, { display: 'none', autoAlpha: 0, y:80, ease: Elastic.easeOut.config(.8) }, delay + .15)
     return timeline;
 }
 
