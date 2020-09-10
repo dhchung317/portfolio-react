@@ -76,7 +76,7 @@ a:visited {
   --darkGrey: #cfcfcf;
   --colorTransition: color 0.3s linear;
   --allTransition: all 0.3s linear;
-  --allTransition2: all 0.5s linear;
+  --allTransition2: all 0.4s linear;
   --mainSpacing: 3px;
   --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
   --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
