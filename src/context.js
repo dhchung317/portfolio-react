@@ -13,7 +13,7 @@ const ContextProvider = (props) => {
 
     const [loading, setLoading] = useState(true)
 
-    const getProjects = async() => {
+    const getProjects = async () => {
         try {
             let response = await Client.getEntries({
                 content_type: "portfolio"
@@ -25,7 +25,7 @@ const ContextProvider = (props) => {
         }
     }
 
-    const getSkills = async() => {
+    const getSkills = async () => {
         try {
             let response = await Client.getEntries({
                 content_type: "portfolioSkillTile",
@@ -38,7 +38,7 @@ const ContextProvider = (props) => {
         }
     }
 
-    const getContacts = async() => {
+    const getContacts = async () => {
         try {
             let response = await Client.getEntries({
                 content_type: "portfolioContactItem",
@@ -82,14 +82,30 @@ const ContextProvider = (props) => {
     }
 
     useEffect(() => {
-            getProjects()
-            getSkills()
-            getContacts()
-            setLoading(false)
+        getProjects()
+        getSkills()
+        getContacts()
+        setLoading(false)
     }, []);
 
+    function getWindowDimensions() {
+        const { innerWidth: width, innerHeight: height } = window;
+        return {
+            width,
+            height
+        };
+    }
+
+
+    const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+
+    useEffect(() => {
+        getWindowDimensions()
+    }, [windowDimensions]);
+
+
     return (
-        <Context.Provider value={{ projects, skills, cItems, loading }}>
+        <Context.Provider value={{ projects, skills, cItems, loading, windowDimensions }}>
             {props.children}
         </Context.Provider>
     )
