@@ -631,6 +631,9 @@ footer {
   .contact-list {
     height: auto;
   }
+  .navbar {
+    width: 100vw;
+  }
   .nav li {
     width: 1rem;
   }
