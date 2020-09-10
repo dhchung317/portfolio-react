@@ -88,24 +88,8 @@ const ContextProvider = (props) => {
         setLoading(false)
     }, []);
 
-    function getWindowDimensions() {
-        const { innerWidth: width, innerHeight: height } = window;
-        return {
-            width,
-            height
-        };
-    }
-
-
-    const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
-
-    useEffect(() => {
-        getWindowDimensions()
-    }, [windowDimensions]);
-
-
     return (
-        <Context.Provider value={{ projects, skills, cItems, loading, windowDimensions }}>
+        <Context.Provider value={{ projects, skills, cItems, loading}}>
             {props.children}
         </Context.Provider>
     )

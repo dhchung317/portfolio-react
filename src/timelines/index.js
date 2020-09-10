@@ -1,6 +1,6 @@
 import { gsap } from 'gsap';
 import { TimelineMax as Timeline, Power1, Back, Elastic } from 'gsap';
-gsap.registerPlugin(Timeline, Power1, Back, Elastic);
+gsap.registerPlugin( Timeline, Power1, Back, Elastic);
 
 /** 
 * TODO: optional default transitions
@@ -62,7 +62,17 @@ const getContactTimeline = (node, delay) => {
     const timeline = new Timeline({ paused: true });
     const content = node.querySelectorAll('div');
     timeline
-        .from(content, 1.5, { display: 'none', autoAlpha: 0, y: 200, ease: Elastic.easeOut.config(.8) }, delay + .15)
+        .from(content, 1.5, { display: 'none', autoAlpha: 0, y:80, ease: Elastic.easeOut.config(.8) }, delay + .15)
+    return timeline;
+}
+
+const getHamburgerTimeline = (node, delay) => {
+    const timeline = new Timeline({ paused: true });
+    const content = node
+    timeline
+        // .from(content, 1.5, { display: 'none', autoAlpha: 0, ease: Elastic.easeOut.config(.8) }, delay + .15)
+        .to(content, 2, { rotation: 360 })
+
     return timeline;
 }
 
@@ -80,6 +90,8 @@ export const play = (pathname, node, appears) => {
         timeline = getTextTimeline(node, delay);
     else if (pathname === '/contact')
         timeline = getContactTimeline(node, delay);
+    else if (pathname === '/hamburger')
+        timeline = getHamburgerTimeline(node, delay);
     else
         timeline = getDefaultTimeline(node, delay);
 
