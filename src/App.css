@@ -704,9 +704,10 @@ footer {
   }
   .hamburger a {
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
     /* padding-top: 5px; */
-    width: 100vw;
+    padding-left: 100px;
+    padding-right: 100px;
   }
   /* .hamburger a:visited {
     display: table-row;
@@ -778,5 +779,9 @@ footer {
     height: 200px;
     width: 300px;
     margin: 0;
+  }
+
+  .about-me-text-div p {
+    font-weight: 700;
   }
 }
