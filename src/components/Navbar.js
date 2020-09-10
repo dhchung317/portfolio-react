@@ -45,10 +45,10 @@ export default function Navbar() {
 
             <div className="nav">
                 <ul className={open && windowDimensions.width < 700 ? "show-nav hamburger" : "nav-links"}>
-                    <li className="one"><NavLink exact to="/" activeClassName="active-link">Home</NavLink></li>
-                    <li className="two"><NavLink to="/projects" activeClassName="active-link">Projects</NavLink></li>
-                    <li className="three"> <NavLink to="/skills" activeClassName="active-link">Skills</NavLink></li>
-                    <li className="four"><NavLink to="/contact" activeClassName="active-link">Contact</NavLink></li>
+                    <li className="one"><NavLink exact to="/" activeClassName="active-link"><span>Home</span></NavLink></li>
+                    <li className="two"><NavLink to="/projects" activeClassName="active-link"><span>Projects</span></NavLink></li>
+                    <li className="three"> <NavLink to="/skills" activeClassName="active-link"><span>Skills</span></NavLink></li>
+                    <li className="four"><NavLink to="/contact" activeClassName="active-link"><span>Contact</span></NavLink></li>
                     <hr className="underline" />
                 </ul>
             </div>
