@@ -20,7 +20,7 @@ const getProjectTimeline = (node, delay) => {
     const timeline = new Timeline({ paused: true });
     const content = node.querySelectorAll('div');
     timeline
-        .from(node, 1.5, { display: 'none', autoAlpha: 0, y: 200, ease: Elastic.easeOut.config(.8) }, delay + .15)
+        .from(node, 1.5, { display: 'none', autoAlpha: 0, y: 100, ease: Elastic.easeOut.config(.8) }, delay + .15)
     return timeline;
 }
 

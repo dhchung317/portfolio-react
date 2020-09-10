@@ -348,8 +348,7 @@ a.active-link {
 
 .project-tile-content-container {
   width: 400px;
-  margin-left: 25px;
-  margin-right: 25px;
+  margin: 25px;
 }
 
 .project-tile-title h2 {
