@@ -763,4 +763,15 @@ footer {
     bottom: 0;
     margin: auto;
   }
+
+  .project-tile-content-container {
+    width: 100vw;
+    margin: 0;
+  }
+
+  .project-tile {
+    width: 100vw;
+    margin: 12px 0px 12px 0px;
+    
+  }
 }
