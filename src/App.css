@@ -706,7 +706,8 @@ footer {
     text-decoration: none;
     font-weight: 600;
     /* padding-top: 5px; */
-    width: 100vw;
+    padding-left: 100px;
+    padding-right: 100px;
   }
   /* .hamburger a:visited {
     display: table-row;
