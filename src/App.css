@@ -729,6 +729,7 @@ footer {
   }
   .underline {
     display: none;
+    visibility: hidden;
   }
   .logo-container {
     display: flex;
@@ -785,3 +786,7 @@ footer {
     font-weight: 700;
   }
 }
+
+/**
+*TODO: consider fitting all elements of media query into fewer screens, with less scrolling
+**/
