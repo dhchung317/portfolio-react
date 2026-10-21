@@ -7,7 +7,7 @@ A React 19 portfolio with projects, games, and an art gallery. All content and m
 Use Node.js 22.12+ within the 22.x release line (`nvm use`).
 
 ```sh
-npm install
+npx --yes npm@11.21.1 install
 npm start
 ```
 
@@ -29,10 +29,12 @@ Import this GitHub repository into Vercel and use the repository root as the Roo
 | --------------------- | --------------------------------------- |
 | Framework             | Vite                                    |
 | Node.js               | 22.x (selected by package.json engines) |
-| Install command       | `npm install`                           |
+| Install command       | `npx --yes npm@11.21.1 install`         |
 | Build command         | `npm run build`                         |
 | Output directory      | `dist`                                  |
 | Environment variables | None                                    |
+
+The installer is pinned to npm 11.21.1 because npm 10 can crash with an `edgesOut` error when resolving these dependencies without a lockfile. `package-lock.json` remains ignored. If the Vercel dashboard has an Install Command override, clear it to use `vercel.json`, or set it to the same pinned command.
 
 The SPA rewrite serves `index.html` for client routes, so direct visits and refreshes on `/projects`, `/gallery`, `/contact`, and the `/skills` redirect work. Existing static files are served normally. Follow [Vercel’s Vite guide](https://vercel.com/docs/frameworks/frontend/vite) and [Node.js version guidance](https://vercel.com/docs/functions/runtimes/node-js/node-js-versions).
 
