@@ -7,7 +7,7 @@ A React 19 portfolio with projects, games, and an art gallery. All content and m
 Use Node.js 22.12+ within the 22.x release line (`nvm use`).
 
 ```sh
-npm ci
+npm install
 npm start
 ```
 
@@ -29,7 +29,7 @@ Import this GitHub repository into Vercel and use the repository root as the Roo
 | --------------------- | --------------------------------------- |
 | Framework             | Vite                                    |
 | Node.js               | 22.x (selected by package.json engines) |
-| Install command       | `npm ci`                                |
+| Install command       | `npm install`                           |
 | Build command         | `npm run build`                         |
 | Output directory      | `dist`                                  |
 | Environment variables | None                                    |
