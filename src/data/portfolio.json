@@ -1,0 +1,175 @@
+{
+  "intro": {
+    "heading": "A few things I’ve made.",
+    "text": "Games to play, art to look at, and experiments in between"
+  },
+  "projects": [
+    {
+      "id": "honji-pictionary",
+      "title": "Honji Pictionary",
+      "category": "Multiplayer · Web game",
+      "image": "/media/honji.png",
+      "imageAlt": "Honji Pictionary illustrated game logo",
+      "summary": "Big ideas. Questionable drawings. A drawing party game with an AI judge.",
+      "description": "Create a room, invite your friends, and turn a shared screen and a handful of phones into a drawing competition. Everyone gets the same prompt and three minutes to make it recognizable.",
+      "details": [
+        "Up to 10 players join with a room code and sketch their own avatars.",
+        "AI-generated prompts, a timed drawing canvas, and ranked results with playful feedback.",
+        "Built with React, TypeScript, HTML Canvas, Vercel, Upstash Redis, and the OpenAI API."
+      ],
+      "githubLink": "https://github.com/dhchung317/honji-pictionary",
+      "demoLink": "https://honji.xyz/",
+      "demoLabel": "Play Honji",
+      "images": [
+        {
+          "src": "/media/projects/honji/02-multiplayer-lobby.png",
+          "alt": "Friends join the lobby and get ready to draw.",
+          "caption": "Friends join the lobby and get ready to draw."
+        },
+        {
+          "src": "/media/projects/honji/04-timed-drawing.png",
+          "alt": "Draw against the clock with undo, clear, and submit controls.",
+          "caption": "Draw against the clock with undo, clear, and submit controls."
+        },
+        {
+          "src": "/media/projects/honji/05-ai-results.png",
+          "alt": "AI scores and ranks the drawings with playful feedback.",
+          "caption": "AI scores and ranks the drawings with playful feedback."
+        }
+      ],
+      "imageNote": "Gameplay examples use sample players, drawings, and scores."
+    },
+    {
+      "id": "ar-you-learning",
+      "title": "AR You Learning",
+      "category": "Education · Augmented reality",
+      "image": "/media/projects/ar-game/01-choose-your-adventure.png",
+      "imageAlt": "AR You Learning adventure selection with Animals, Colors, and Cars",
+      "summary": "Spelling, augmented reality, and lessons to take with you.",
+      "description": "A children’s learning game that connects words, pictures, and augmented reality. The redesigned app adds downloadable lessons, supported by a companion lesson library.",
+      "details": [
+        "A completely redesigned app experience.",
+        "Download lessons with 3D models to explore in augmented reality.",
+        "Downloaded lessons can be used offline.",
+        "A companion Lesson Studio provides lesson editing, 3D model previews, and change review before publication."
+      ],
+      "images": [],
+      "demoLink": "https://lesson-studio-virid.vercel.app/",
+      "demoLabel": "Explore lesson library",
+      "imageGroups": [
+        {
+          "title": "Gameplay",
+          "description": "From the original in-app tutorial recording.",
+          "images": [
+            {
+              "src": "/media/projects/ar-gameplay/gameplay-045s.jpg",
+              "alt": "Floating 3D letters surround the object to spell.",
+              "caption": "Find the object and explore the floating letters."
+            },
+            {
+              "src": "/media/projects/ar-gameplay/gameplay-065s.jpg",
+              "alt": "A learner taps a floating letter to build the word.",
+              "caption": "Tap the letters in order to build the object’s name."
+            },
+            {
+              "src": "/media/projects/ar-gameplay/gameplay-130s.jpg",
+              "alt": "The completed word KOALA and a star beside the koala model.",
+              "caption": "Complete the word and earn a star."
+            }
+          ]
+        },
+        {
+          "title": "Lessons & offline play",
+          "images": [
+            {
+              "src": "/media/projects/ar-game/02-downloadable-lessons.png",
+              "alt": "Discover and download new lessons.",
+              "caption": "Discover and download new lessons."
+            },
+            {
+              "src": "/media/projects/ar-game/03-downloaded-for-offline.png",
+              "alt": "Keep downloaded lessons ready for offline use.",
+              "caption": "Keep downloaded lessons ready for offline use."
+            },
+            {
+              "src": "/media/projects/ar-game/11-downloaded-car-vocabulary.png",
+              "alt": "Explore vocabulary from a downloaded car lesson.",
+              "caption": "Explore vocabulary from a downloaded car lesson."
+            }
+          ]
+        },
+        {
+          "title": "Lesson Studio & library",
+          "images": [
+            {
+              "src": "/media/projects/lesson-studio/03-lesson-editor.jpg",
+              "alt": "Edit lessons, upload models, and manage vocabulary.",
+              "caption": "Edit lessons, upload models, and manage vocabulary."
+            },
+            {
+              "src": "/media/projects/lesson-studio/04-model-preview.jpg",
+              "alt": "Inspect a 3D model before publishing a lesson.",
+              "caption": "Inspect a 3D model before publishing a lesson."
+            },
+            {
+              "src": "/media/projects/lesson-studio/05-change-review.jpg",
+              "alt": "Review changes while keeping the published lesson available.",
+              "caption": "Review changes while keeping the published lesson available."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stats-dont-lie",
+      "title": "Stats Don’t Lie",
+      "category": "Android · Hackathon",
+      "image": "/media/493fe8ae0ac7-stats.png",
+      "imageAlt": "Stats Don't Lie basketball app artwork",
+      "summary": "A race against the clock, powered by player stats.",
+      "description": "A time-attack quiz that challenges players to compare individual player statistics and pick the answer that fits the question. A results screen shows the answers they got right and wrong.",
+      "details": [
+        "Built for Android in Kotlin.",
+        "A timed quiz flow leads from the main screen through gameplay to a results summary."
+      ],
+      "githubLink": "https://github.com/dhchung317/Stats_Dont_Lie-2-kotlin",
+      "images": [
+        {
+          "src": "/media/stats-main.png",
+          "alt": "Stats Don't Lie main screen",
+          "caption": "Main screen"
+        },
+        {
+          "src": "/media/stats-game.png",
+          "alt": "Player statistics quiz screen",
+          "caption": "Time-attack quiz"
+        },
+        {
+          "src": "/media/stats-results.png",
+          "alt": "Quiz results screen",
+          "caption": "Results"
+        }
+      ]
+    }
+  ],
+  "contacts": [
+    {
+      "name": "E-Mail",
+      "icon": "/media/5c3a92851527-mail.svg",
+      "link": "dhchung317@gmail.com",
+      "id": "6B1oJ9MATnILxTPaxUp6hF"
+    },
+    {
+      "name": "Instagram",
+      "icon": "/media/c11a87335ec2-instagram.svg",
+      "link": "https://www.instagram.com/d_h_c_17/",
+      "id": "2C4MmX1GMeTQJoUmrLKu5q"
+    },
+    {
+      "name": "LinkedIn",
+      "icon": "/media/8f61a302606f-linkedin.svg",
+      "link": "https://www.linkedin.com/in/hyunki-chung/",
+      "id": "3y8yX6DQ6LZlNmz5wIM7Xx"
+    }
+  ]
+}
