@@ -20,7 +20,7 @@
   },
   "type": "module",
   "engines": {
-    "node": "^22.12.0"
+    "node": "24.x"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^7.0.1",
