@@ -4,7 +4,7 @@ A React 19 portfolio with projects, games, and an art gallery. All content and m
 
 ## Development
 
-Use Node.js 22.12+ within the 22.x release line (`nvm use`).
+Use Node.js 24.x (`nvm use`).
 
 ```sh
 npx --yes npm@11.21.1 install
@@ -28,7 +28,7 @@ Import this GitHub repository into Vercel and use the repository root as the Roo
 | Setting               | Value                                   |
 | --------------------- | --------------------------------------- |
 | Framework             | Vite                                    |
-| Node.js               | 22.x (selected by package.json engines) |
+| Node.js               | 24.x (selected by package.json engines) |
 | Install command       | `npx --yes npm@11.21.1 install`         |
 | Build command         | `npm run build`                         |
 | Output directory      | `dist`                                  |
